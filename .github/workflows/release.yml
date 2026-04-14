@@ -61,12 +61,29 @@ jobs:
           echo "should_release=true" >> "${GITHUB_OUTPUT}"
 
       - name: Validate test suite
-        if: steps.tag.outputs.should_release == 'true'
-        run: ./scripts/coverage_gate.sh
+        shell: bash
+        run: |
+          if [[ "${{ steps.tag.outputs.should_release }}" != "true" ]]; then
+            echo "No release tag found for this run; skipping validation."
+            exit 0
+          fi
+          ./scripts/coverage_gate.sh
 
       - name: Publish GitHub release
-        uses: softprops/action-gh-release@v3
-        if: steps.tag.outputs.should_release == 'true'
-        with:
-          tag_name: ${{ steps.tag.outputs.tag_name }}
-          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          if [[ "${{ steps.tag.outputs.should_release }}" != "true" ]]; then
+            echo "No release tag found for this run; skipping publish."
+            exit 0
+          fi
+
+          TAG="${{ steps.tag.outputs.tag_name }}"
+          if gh release view "${TAG}" >/dev/null 2>&1; then
+            echo "Release ${TAG} already exists; nothing to publish."
+            exit 0
+          fi
+
+          echo "Publishing release ${TAG}"
+          gh release create "${TAG}" --generate-notes
