@@ -1,11 +1,11 @@
 package api
 
 type ApiV3Token struct {
-	Address  string `json:"address"`
-	Symbol   string `json:"symbol"`
-	Name     string `json:"name"`
-	Decimals int    `json:"decimals"`
-	ChainID  int    `json:"chainId"`
+	Address   string `json:"address"`
+	Symbol    string `json:"symbol"`
+	Name      string `json:"name"`
+	Decimals  int    `json:"decimals"`
+	ChainID   int    `json:"chainId"`
 	ProgramID string `json:"programId"`
 }
 

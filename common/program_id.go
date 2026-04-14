@@ -10,18 +10,18 @@ var (
 
 	UTIL1216 = mustPublicKey("CLaimxFqjHzgTJtAGHU47NPhg6qrc5sCnpC4tBLyABQS")
 
-	OpenBookProgram = mustPublicKey("srmqPvymJeFKQ4zGQed1GFppgkRHL9kaELCbyksJtPX")
+	OpenBookProgram  = mustPublicKey("srmqPvymJeFKQ4zGQed1GFppgkRHL9kaELCbyksJtPX")
 	SerumProgramIDV3 = mustPublicKey("9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin")
 
-	AMMV4  = mustPublicKey("675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8")
-	AMMStable = mustPublicKey("5quBtoiQqxF9Jv6KYKctB59NT3gtJD2Y65kdnB1Uev3h")
+	AMMV4                         = mustPublicKey("675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8")
+	AMMStable                     = mustPublicKey("5quBtoiQqxF9Jv6KYKctB59NT3gtJD2Y65kdnB1Uev3h")
 	LiquidityPoolProgramIDV5Model = mustPublicKey("CDSr3ssLcRB6XYPJwAfFt18MZvEZp4LjHcvzBVZ45duo")
-	CLMMProgramID     = mustPublicKey("CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK")
-	CLMMLockProgramID = mustPublicKey("LockrWmn6K5twhz3y9w1dQERbmgSaRkfnTeTKbpofwE")
-	CLMMLockAuthID    = mustPublicKey("kN1kEznaF5Xbd8LYuqtEFcxzWSBk5Fv6ygX6SqEGJVy")
+	CLMMProgramID                 = mustPublicKey("CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK")
+	CLMMLockProgramID             = mustPublicKey("LockrWmn6K5twhz3y9w1dQERbmgSaRkfnTeTKbpofwE")
+	CLMMLockAuthID                = mustPublicKey("kN1kEznaF5Xbd8LYuqtEFcxzWSBk5Fv6ygX6SqEGJVy")
 
-	ModelDataPubKey = mustPublicKey("CDSr3ssLcRB6XYPJwAfFt18MZvEZp4LjHcvzBVZ45duo")
-	RouterProgram   = mustPublicKey("routeUGWgWzqBWFcrCfv8tritsqukccJPu3q5GPP3xS")
+	ModelDataPubKey  = mustPublicKey("CDSr3ssLcRB6XYPJwAfFt18MZvEZp4LjHcvzBVZ45duo")
+	RouterProgram    = mustPublicKey("routeUGWgWzqBWFcrCfv8tritsqukccJPu3q5GPP3xS")
 	FeeDestinationID = mustPublicKey("7YttLkHDoNj9wyDur5pM1ejNaAvT9X4eqaYcHQqtj2G5")
 
 	IDOProgramIDV1 = mustPublicKey("6FJon3QE27qgPVggARueB22hLvoh22VzJpXv4rBEoSLF")
@@ -36,12 +36,12 @@ var (
 	LockCPMMProgram = mustPublicKey("LockrWmn6K5twhz3y9w1dQERbmgSaRkfnTeTKbpofwE")
 	LockCPMMAuth    = mustPublicKey("3f7GcQFG397GAaEnv51zR6tsTVihYRydnydDD1cXekxH")
 
-	LaunchpadProgram = mustPublicKey("LanMV9sAd7wArD4vJFi2qDdfnVhFxYSUg6eADduJ3uj")
-	LaunchpadAuth    = mustPublicKey("WLHv2UAZm6z4KyaaELi5pjdbJh6RESMva1Rnn8pJVVh")
+	LaunchpadProgram    = mustPublicKey("LanMV9sAd7wArD4vJFi2qDdfnVhFxYSUg6eADduJ3uj")
+	LaunchpadAuth       = mustPublicKey("WLHv2UAZm6z4KyaaELi5pjdbJh6RESMva1Rnn8pJVVh")
 	DevLaunchpadProgram = mustPublicKey("DRay6fNdQ5J82H7xV6uq2aV3mNrUZ1J4PgSKsWgptcm6")
 	DevLaunchpadAuth    = mustPublicKey("5xqNaZXX5eUi4p5HU4oz9i5QnwRNT2y6oN7yyn4qENeq")
-	LaunchpadPlatform = mustPublicKey("4Bu96XjU84XjPDSpveTVf6LYGCkfW5FK7SNkREWcEfV4")
-	LaunchpadConfig   = mustPublicKey("6s1xP3hpbAfFoNtUNF8mfHsjr2Bd97JxFJRWLbL6aHuX")
+	LaunchpadPlatform   = mustPublicKey("4Bu96XjU84XjPDSpveTVf6LYGCkfW5FK7SNkREWcEfV4")
+	LaunchpadConfig     = mustPublicKey("6s1xP3hpbAfFoNtUNF8mfHsjr2Bd97JxFJRWLbL6aHuX")
 )
 
 type ProgramIDConfig map[string]solana.PublicKey

@@ -21,19 +21,19 @@ var (
 	InstructionProgramID = mustPublicKey("Sysvar1nstructions1111111111111111111111111")
 	SystemProgramID      = solana.SystemProgramID
 
-	RAYMint  = mustPublicKey("4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R")
-	PAIMint  = mustPublicKey("Ea5SjE2Y6yvCeW5dYTn7PYMuW5ikXkvbGdcmSnXeaLjS")
-	SRMMint  = mustPublicKey("SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt")
-	USDCMint = mustPublicKey("EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v")
-	USDTMint = mustPublicKey("Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB")
-	MSOLMint = mustPublicKey("mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So")
+	RAYMint   = mustPublicKey("4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R")
+	PAIMint   = mustPublicKey("Ea5SjE2Y6yvCeW5dYTn7PYMuW5ikXkvbGdcmSnXeaLjS")
+	SRMMint   = mustPublicKey("SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt")
+	USDCMint  = mustPublicKey("EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v")
+	USDTMint  = mustPublicKey("Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB")
+	MSOLMint  = mustPublicKey("mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So")
 	StSOLMint = mustPublicKey("7dHbWXmci3dT8UFYWYZweBLXgycu7Y3iL6trKn1Y7ARj")
-	USDHMint = mustPublicKey("USDH1SM1ojwWUga67PGrgFWUHibbjqMvuMaDkRJTgkX")
-	NRVMint  = mustPublicKey("NRVwhjBQiUPYtfDT5zRBVJajzFQHaBUNtC7SNVvqRFa")
-	ANAMint  = mustPublicKey("ANAxByE6G2WjFp7A4NqtWYXb3mgruyzZYg3spfxe6Lbo")
-	ETHMint  = mustPublicKey("7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs")
-	WSOLMint = mustPublicKey("So11111111111111111111111111111111111111112")
-	SOLMint  = solana.PublicKey{}
+	USDHMint  = mustPublicKey("USDH1SM1ojwWUga67PGrgFWUHibbjqMvuMaDkRJTgkX")
+	NRVMint   = mustPublicKey("NRVwhjBQiUPYtfDT5zRBVJajzFQHaBUNtC7SNVvqRFa")
+	ANAMint   = mustPublicKey("ANAxByE6G2WjFp7A4NqtWYXb3mgruyzZYg3spfxe6Lbo")
+	ETHMint   = mustPublicKey("7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs")
+	WSOLMint  = mustPublicKey("So11111111111111111111111111111111111111112")
+	SOLMint   = solana.PublicKey{}
 )
 
 func ValidateAndParsePublicKey(publicKey PublicKeyish, transformSol bool) (solana.PublicKey, error) {
