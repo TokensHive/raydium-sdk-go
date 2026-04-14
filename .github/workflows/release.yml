@@ -4,17 +4,27 @@ on:
   push:
     tags:
       - "v*"
+  workflow_run:
+    workflows: ["release-please"]
+    types: [completed]
 
 permissions:
   contents: write
 
 jobs:
   publish:
+    if: >
+      github.event_name == 'push' ||
+      (github.event_name == 'workflow_run' &&
+       github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_branch == 'main')
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       - name: Setup Go
         uses: actions/setup-go@v6
@@ -22,10 +32,41 @@ jobs:
           go-version: "1.25.x"
           cache: true
 
+      - name: Resolve release tag
+        id: tag
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${GITHUB_EVENT_NAME}" == "push" ]]; then
+            TAG="${GITHUB_REF#refs/tags/}"
+          else
+            SHA="${{ github.event.workflow_run.head_sha }}"
+            TAG=""
+            while IFS= read -r candidate; do
+              if [[ "${candidate}" == v* ]]; then
+                TAG="${candidate}"
+                break
+              fi
+            done < <(git tag --points-at "${SHA}")
+          fi
+
+          if [[ -z "${TAG}" ]]; then
+            echo "No semver tag points at this workflow run SHA; skipping release job."
+            echo "should_release=false" >> "${GITHUB_OUTPUT}"
+            exit 0
+          fi
+
+          echo "Resolved release tag: ${TAG}"
+          echo "tag_name=${TAG}" >> "${GITHUB_OUTPUT}"
+          echo "should_release=true" >> "${GITHUB_OUTPUT}"
+
       - name: Validate test suite
+        if: steps.tag.outputs.should_release == 'true'
         run: ./scripts/coverage_gate.sh
 
       - name: Publish GitHub release
         uses: softprops/action-gh-release@v3
+        if: steps.tag.outputs.should_release == 'true'
         with:
+          tag_name: ${{ steps.tag.outputs.tag_name }}
           generate_release_notes: true

@@ -28,5 +28,8 @@ jobs:
 
       - name: Run optional live API smoke
         env:
-          RAYDIUM_MAINNET_API: https://api-v3.raydium.io
-        run: go test ./api -run TestAPIRequestsAndCache -count=1
+          SOLANA_RPC_HTTP: ${{ secrets.SOLANA_RPC_HTTP }}
+        run: |
+          RPC_ENDPOINT="${SOLANA_RPC_HTTP:-https://api.mainnet-beta.solana.com}"
+          echo "Using SOLANA_RPC_HTTP endpoint: ${RPC_ENDPOINT}"
+          SOLANA_RPC_HTTP="${RPC_ENDPOINT}" go test ./api -run TestLiveRPCGetEpochInfo -count=1 -tags=live
