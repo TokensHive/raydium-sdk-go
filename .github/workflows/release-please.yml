@@ -9,6 +9,7 @@ on:
       - "go.mod"
       - "go.sum"
       - "CHANGELOG.md"
+      - ".github/workflows/**"
       - "release-please-config.json"
       - ".release-please-manifest.json"
 
@@ -23,6 +24,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
+      - name: Setup Node 24
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
 
       - name: Verify Node runtime
         run: |
