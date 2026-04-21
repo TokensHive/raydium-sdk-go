@@ -3,7 +3,7 @@ module github.com/TokensHive/raydium-sdk-go
 go 1.25.0
 
 require (
-	github.com/gagliardetto/solana-go v1.17.0
+	github.com/gagliardetto/solana-go v1.18.0
 	github.com/shopspring/decimal v1.4.0
 )
 
@@ -25,7 +25,7 @@ require (
 	github.com/mostynb/zstdpool-freelist v0.0.0-20201229113212-927304c0c3b1 // indirect
 	github.com/mr-tron/base58 v1.3.0 // indirect
 	github.com/streamingfast/logging v1.2.2 // indirect
-	go.mongodb.org/mongo-driver v1.17.9 // indirect
+	go.mongodb.org/mongo-driver/v2 v2.5.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.27.1 // indirect
 	golang.org/x/crypto v0.50.0 // indirect
