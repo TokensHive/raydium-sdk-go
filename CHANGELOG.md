@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.2](https://github.com/TokensHive/raydium-sdk-go/compare/v1.0.1...v1.0.2) (2026-04-22)
+
+
+### Build System
+
+* **deps:** bump github.com/gagliardetto/solana-go ([5f75939](https://github.com/TokensHive/raydium-sdk-go/commit/5f75939b2ff02d189fa6e4e2e1cc967bd072a903))
+* **deps:** bump github.com/gagliardetto/solana-go from 1.17.0 to 1.18.0 ([5c5bdc7](https://github.com/TokensHive/raydium-sdk-go/commit/5c5bdc7c68ae09c527d4a62759a766ad19694c1f))
+
 ## [1.0.1](https://github.com/TokensHive/raydium-sdk-go/compare/v1.0.0...v1.0.1) (2026-04-14)
 
 
